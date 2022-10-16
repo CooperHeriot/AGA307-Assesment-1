@@ -8,6 +8,7 @@ public class TriggerPad : MonoBehaviour
     private Vector3 spize;
     private bool shrink;
 
+    public bool orbMode;
     void Start()
     {
         spize = sphere.transform.localScale;
@@ -15,11 +16,20 @@ public class TriggerPad : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
+        
+
         if(other.CompareTag("Player"))
         {
-            //change the spheres colour to green
-            sphere.GetComponent<MeshRenderer>().material.color = Color.green;
-            shrink = false;
+            if (orbMode == false)
+            {
+                //change the spheres colour to green
+                sphere.GetComponent<MeshRenderer>().material.color = Color.green;
+                shrink = false;
+            } else
+            {
+                other.gameObject.GetComponent<FirePoint>().inZone = true;
+            }
+            
         }
     }
 
@@ -27,8 +37,12 @@ public class TriggerPad : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            //Increas the spheres scale by 0.01 on all axis
-            sphere.transform.localScale += spize + new Vector3(0.01f, 0.01f, 0.01f);
+            if (orbMode == false)
+            {
+                //Increas the spheres scale by 0.01 on all axis
+                sphere.transform.localScale += spize + new Vector3(0.01f, 0.01f, 0.01f);
+            }
+            
         }
     }
 
@@ -36,10 +50,18 @@ public class TriggerPad : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            //set the spheres size back to 1
-            shrink = true;
-            //Change the spheres colour to yellow
-            sphere.GetComponent<MeshRenderer>().material.color = Color.yellow;
+            if (orbMode == false)
+            {
+                //set the spheres size back to 1
+                shrink = true;
+                //Change the spheres colour to yellow
+                sphere.GetComponent<MeshRenderer>().material.color = Color.yellow;
+            }
+            else
+            {
+                other.gameObject.GetComponent<FirePoint>().inZone = false;
+            }
+
         }
     }
 

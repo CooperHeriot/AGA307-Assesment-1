@@ -20,9 +20,16 @@ public class Projectile : MonoBehaviour
     {
         if (collision.transform.tag == "Target")
         {
-            collision.gameObject.GetComponent<MeshRenderer>().material.color = Color.red;
-            Destroy(collision.gameObject, 1);
-            Destroy(gameObject);
+            if (collision.gameObject.GetComponent<Target>() != false)
+            {
+                collision.gameObject.GetComponent<Target>().Hurt();
+                Destroy(gameObject);
+            } else
+            {
+                collision.gameObject.GetComponent<MeshRenderer>().material.color = Color.red;
+                Destroy(collision.gameObject, 1);
+                Destroy(gameObject);
+            }            
         }
     }
 }

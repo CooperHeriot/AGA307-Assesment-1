@@ -322,7 +322,7 @@
 -r:"C:/Program Files/Unity/Hub/Editor/2021.3.4f1/Editor/Data/NetStandard/ref/2.1.0/netstandard.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2021.3.4f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Common.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2021.3.4f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll"
--r:"C:/Users/Coope/Downloads/AGA307-Assessment-1/AGA307-Assessment-1/Library/PackageCache/com.unity.nuget.newtonsoft-json@3.0.2/Runtime/Newtonsoft.Json.dll"
+-r:"C:/Users/Coope/Downloads/AGA307-Assessment-1/AGA307-Assesment-1/AGA307-Assessment-1/Library/PackageCache/com.unity.nuget.newtonsoft-json@3.0.2/Runtime/Newtonsoft.Json.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.PlasticSCM.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.ProBuilder.AddOns.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.ProBuilder.AssetIdRemapUtility.ref.dll"
@@ -340,11 +340,13 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.VSCode.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
+"Assets/Scripts/EnemyManager.cs"
 "Assets/Scripts/FirePoint.cs"
 "Assets/Scripts/MouseLook.cs"
 "Assets/Scripts/PlayerMovement.cs"
 "Assets/Scripts/Projectile.cs"
 "Assets/Scripts/Singleton.cs"
+"Assets/Scripts/Target.cs"
 "Assets/Scripts/TriggerPad.cs"
 -langversion:9.0
 
