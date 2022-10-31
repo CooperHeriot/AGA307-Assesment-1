@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyManager : MonoBehaviour
+public class EnemyManager : Singleton<EnemyManager>
 {
     public Transform[] spawnPoints;
     public GameObject[] EnemyTypes;
@@ -11,13 +11,16 @@ public class EnemyManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        SpawnEnemy();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            SpawnOneEnemy();
+        }
     }
 
     public void SpawnEnemy()
@@ -28,5 +31,19 @@ public class EnemyManager : MonoBehaviour
             GameObject enemy = Instantiate(EnemyTypes[rndEnemy], spawnPoints[i].position, spawnPoints[i].rotation);
             enemies.Add(enemy);
         }
+    }
+
+    public void SpawnOneEnemy()
+    {
+            int rndEnemy = Random.Range(0, EnemyTypes.Length);
+            int rndSpawn = Random.Range(0, spawnPoints.Length);
+            GameObject enemy = Instantiate(EnemyTypes[rndEnemy], spawnPoints[rndSpawn].position, spawnPoints[rndSpawn].rotation);
+            enemies.Add(enemy);
+        enemy.GetComponent<Target>().EM = gameObject.GetComponent<EnemyManager>();
+    }
+
+    public void RemoveEnemy(GameObject enemy)
+    {
+        enemies.Remove(enemy);
     }
 }

@@ -112,3 +112,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healt: 5
+  speed: 0
+  Size: 2
+  sizeChange: 3
+  EM: {fileID: 0}
+  goTo: {fileID: 0}

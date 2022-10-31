@@ -1,9 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class FirePoint : MonoBehaviour
 {
+    public List<GameObject> Projectiles;
+    public int weaponSelect;
+    public TextMeshProUGUI UI;
     public GameObject projectilePrefab;
     public float projectileSpeed = 1000;
     public Transform firingPoint;
@@ -15,6 +19,46 @@ public class FirePoint : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        if (weaponSelect > 3)
+        {
+            weaponSelect = 1;
+        }
+        if (weaponSelect < 1)
+        {
+            weaponSelect = 3;
+        }
+        
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            weaponSelect = 1;
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            weaponSelect = 2;
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            weaponSelect = 3;
+        }
+
+        if (weaponSelect == 1)
+        {
+            UI.text = ("Ball");
+        }
+        if (weaponSelect == 2)
+        {
+            UI.text = ("Floater");
+        }
+        if (weaponSelect == 3)
+        {
+            UI.text = ("Bomb");
+        }
+
+        weaponSelect += (int)Input.GetAxis("Mouse ScrollWheel");
+
+
+        projectilePrefab = Projectiles[weaponSelect - 1];
+
         if (Input.GetButtonDown("Fire1"))
         {
             GameObject projectileInstance;
@@ -28,9 +72,9 @@ public class FirePoint : MonoBehaviour
 
         if (Input.GetButtonDown("Fire2"))
         {
-            Vector3 fwd = transform.TransformDirection(Vector3.forward);
+            Vector3 fwd = firingPoint.transform.TransformDirection(Vector3.forward);
 
-            if (Physics.Raycast(transform.position, fwd, out hit, 10))
+            if (Physics.Raycast(firingPoint.transform.position, fwd, out hit, 10))
             {
                 print(hit.collider.name);
 
@@ -45,7 +89,7 @@ public class FirePoint : MonoBehaviour
         {
             Vector3 fwd = transform.TransformDirection(Vector3.forward);
 
-            if (Physics.Raycast(transform.position, fwd, out hit, 10))
+            if (Physics.Raycast(firingPoint.transform.position, fwd, out hit, 10))
             {
                 if (hit.collider.transform.tag == "Orb")
                 {
