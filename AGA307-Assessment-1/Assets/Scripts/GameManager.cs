@@ -23,4 +23,9 @@ public class GameManager : Singleton<GameManager>
 
         Timee.text = Timer.ToString("F0");
     }
+
+    public void UpdateScore(int _score)
+    {
+        score += _score;
+    }
 }

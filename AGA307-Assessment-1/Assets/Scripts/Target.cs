@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Target : MonoBehaviour
+public class Target : GameBehaiour
 {
     public int healt = 5;
     public float speed;
@@ -107,6 +107,7 @@ public class Target : MonoBehaviour
             //GM.Timer += 5;
             GameManager.instance.Timer += 5;
             Destroy(gameObject, 1);
+            _GM.UpdateScore(10);
         }
     }
 }

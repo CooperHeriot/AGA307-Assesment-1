@@ -40,7 +40,7 @@ public class TriggerPad : MonoBehaviour
             if (orbMode == false)
             {
                 //Increas the spheres scale by 0.01 on all axis
-                sphere.transform.localScale += spize + new Vector3(0.01f, 0.01f, 0.01f);
+                sphere.transform.localScale += new Vector3(0.01f, 0.01f, 0.01f);
             }
             
         }

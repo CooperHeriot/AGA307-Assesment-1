@@ -343,6 +343,7 @@
 "Assets/Scripts/EnemyManager.cs"
 "Assets/Scripts/FallOff.cs"
 "Assets/Scripts/FirePoint.cs"
+"Assets/Scripts/GameBehaiour.cs"
 "Assets/Scripts/GameManager.cs"
 "Assets/Scripts/MouseLook.cs"
 "Assets/Scripts/PlayerMovement.cs"
@@ -352,6 +353,7 @@
 "Assets/Scripts/TargetBeha.cs"
 "Assets/Scripts/TargetManager.cs"
 "Assets/Scripts/TriggerPad.cs"
+"Assets/Scripts/UIManager.cs"
 -langversion:9.0
 
 /deterministic

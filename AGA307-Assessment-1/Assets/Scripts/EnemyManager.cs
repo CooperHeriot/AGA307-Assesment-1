@@ -30,6 +30,7 @@ public class EnemyManager : Singleton<EnemyManager>
             int rndEnemy = Random.Range(0, EnemyTypes.Length);
             GameObject enemy = Instantiate(EnemyTypes[rndEnemy], spawnPoints[i].position, spawnPoints[i].rotation);
             enemies.Add(enemy);
+            _UI.UpdateTargets(enemies.Count);
         }
     }
 
@@ -39,11 +40,13 @@ public class EnemyManager : Singleton<EnemyManager>
             int rndSpawn = Random.Range(0, spawnPoints.Length);
             GameObject enemy = Instantiate(EnemyTypes[rndEnemy], spawnPoints[rndSpawn].position, spawnPoints[rndSpawn].rotation);
             enemies.Add(enemy);
+        _UI.UpdateTargets(enemies.Count);
         enemy.GetComponent<Target>().EM = gameObject.GetComponent<EnemyManager>();
     }
 
     public void RemoveEnemy(GameObject enemy)
     {
         enemies.Remove(enemy);
+        _UI.UpdateTargets(enemies.Count);
     }
 }
