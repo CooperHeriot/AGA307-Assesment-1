@@ -39,7 +39,10 @@ public class Target : GameBehaiour
         {
             Size = TargetSize.big;
         }
-
+        /*if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            //Size = (int)_GM.difficulty;
+        }*/
         //manually set sizes
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
@@ -72,24 +75,30 @@ public class Target : GameBehaiour
         }            
     }
 
+    /*public void InputDiff(int _SizeDiff)
+    {
+        Size = (TargetSize)_SizeDiff;
+        SizeSetup();
+    }*/
+
     public void SizeSetup()
     {
         switch (Size)
         {
             case TargetSize.small:
-                //transform.localScale = Vector3.one * 0.5f;
+                transform.localScale = Vector3.one * 0.5f;
                 GetComponent<MeshRenderer>().material.color = Color.red;
                 speed = 2;
                 //sizeChange = 1;
                 break;
             case TargetSize.mid:
-                //transform.localScale = Vector3.one * 1f;
+                transform.localScale = Vector3.one * 1f;
                 GetComponent<MeshRenderer>().material.color = Color.yellow;
                 speed = 1.5f;
                // sizeChange = 2;
                 break;
             case TargetSize.big:
-                //transform.localScale = Vector3.one * 2f;
+                transform.localScale = Vector3.one * 2f;
                 GetComponent<MeshRenderer>().material.color = Color.green;
                 speed = 1f;
                // sizeChange = 3;

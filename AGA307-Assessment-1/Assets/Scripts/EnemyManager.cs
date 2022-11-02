@@ -49,4 +49,12 @@ public class EnemyManager : Singleton<EnemyManager>
         enemies.Remove(enemy);
         _UI.UpdateTargets(enemies.Count);
     }
+
+    /*public void UpdateEnemyDifficulty(int _Difficulty)
+    {
+        foreach (Target in enemies)
+        {
+
+        }
+    }*/
 }

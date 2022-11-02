@@ -51,7 +51,7 @@ public class FirePoint : MonoBehaviour
         }
         if (weaponSelect == 3)
         {
-            UI.text = ("Bomb");
+            UI.text = ("Heavy");
         }
 
         weaponSelect += (int)Input.GetAxis("Mouse ScrollWheel");

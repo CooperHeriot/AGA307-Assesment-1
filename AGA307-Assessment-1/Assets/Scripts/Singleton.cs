@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class Singleton <T>:GameBehaiour where T:MonoBehaviour
 {
+    public bool DontDestroy;
     private static T instance_;
     public static T instance
+    
     {
         get
         {
@@ -26,7 +28,11 @@ public class Singleton <T>:GameBehaiour where T:MonoBehaviour
         if (instance_ == null )
         {
             instance_ =this as T;
-            //DontDestroyOnLoad (gameObject );
+            if (DontDestroy == true)
+            {
+                DontDestroyOnLoad(gameObject);
+            }
+            
         }
         else
         {

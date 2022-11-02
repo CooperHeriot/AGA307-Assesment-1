@@ -350,10 +350,10 @@
 "Assets/Scripts/Projectile.cs"
 "Assets/Scripts/Singleton.cs"
 "Assets/Scripts/Target.cs"
-"Assets/Scripts/TargetBeha.cs"
 "Assets/Scripts/TargetManager.cs"
 "Assets/Scripts/TriggerPad.cs"
 "Assets/Scripts/UIManager.cs"
+"Assets/Scripts/UITitle.cs"
 -langversion:9.0
 
 /deterministic
