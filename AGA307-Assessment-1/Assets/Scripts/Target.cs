@@ -65,7 +65,7 @@ public class Target : GameBehaiour
     {
         goTo = EM.spawnPoints[Random.Range(0, EM.spawnPoints.Length)];
         // transform.position = Vector3.MoveTowards(transform.position, goTo.position, speed * Time.deltaTime);
-        if (Vector3.Distance(transform.position, goTo.transform.position) < 1)
+        if (Vector3.Distance(transform.position, goTo.transform.position) > 0.3f)
         {
             yield return new WaitForSeconds(3);
             StartCoroutine(Move());
