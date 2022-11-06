@@ -694,7 +694,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &401158761
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2193,7 +2193,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DontDestroy: 1
   Timer: 30
-  Timee: {fileID: 0}
   difficulty: 0
   gameState: 0
 --- !u!4 &1337940173
