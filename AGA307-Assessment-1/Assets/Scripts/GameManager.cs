@@ -40,7 +40,7 @@ public class GameManager : Singleton<GameManager>
             // Timee.color = Timer < 10 ? Color.red : Color.white;
             if (Input.GetKeyDown(KeyCode.Alpha1))
             {
-                difficulty = Difficulty.Easy;
+                difficulty = Difficulty.hard;
                 _UI.UpdateDifficulty(difficulty);
             }
             if (Input.GetKeyDown(KeyCode.Alpha2))
@@ -50,7 +50,7 @@ public class GameManager : Singleton<GameManager>
             }
             if (Input.GetKeyDown(KeyCode.Alpha3))
             {
-                difficulty = Difficulty.hard;
+                difficulty = Difficulty.Easy;
                 _UI.UpdateDifficulty(difficulty);
             }
         }   
@@ -71,6 +71,7 @@ public class GameManager : Singleton<GameManager>
     public void ChangeDifficulty(int _Difficulty)
     {
         difficulty = (Difficulty)_Difficulty;
+        _UI.UpdateDifficulty(difficulty);
         //_EM.UpdateEnemyDifficulty((int)difficulty);
     }
 

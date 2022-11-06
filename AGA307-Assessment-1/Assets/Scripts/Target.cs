@@ -14,6 +14,7 @@ public class Target : GameBehaiour
 
     public void Start()
     {
+        sizeChange = (int)_GM.difficulty;
         SizeSetup();
         StartCoroutine(Move());
     }
@@ -65,14 +66,21 @@ public class Target : GameBehaiour
     {
         goTo = EM.spawnPoints[Random.Range(0, EM.spawnPoints.Length)];
         // transform.position = Vector3.MoveTowards(transform.position, goTo.position, speed * Time.deltaTime);
-        if (Vector3.Distance(transform.position, goTo.transform.position) > 0.3f)
+        /*if (Vector3.Distance(transform.position, goTo.transform.position) > 0.3f)
         {
             yield return new WaitForSeconds(3);
             StartCoroutine(Move());
         } else
         {
             transform.position = Vector3.Slerp(transform.position, goTo.position, speed * Time.deltaTime);
-        }            
+        }*/
+
+        while (Vector3.Distance(transform.position, goTo.position) > 0.3f)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, goTo.position, speed * Time.deltaTime);
+            transform.LookAt(goTo);
+            yield return null;
+        }
     }
 
     /*public void InputDiff(int _SizeDiff)
